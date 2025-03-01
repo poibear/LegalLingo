@@ -1,0 +1,43 @@
+
+
+
+* {
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+
+#logo, #banner-text {
+    font-family: "DM Serif Text", serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+#borders {
+    border: 2px outset #1C6EA4;
+}
+
+#form-search {
+    color: rgb(108, 137, 163);
+    font-size: 19px;
+    line-height: 19px;
+    padding: 11px;
+    border-radius: 50px;
+    font-family: Georgia, serif;
+    font-weight: normal; 
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.myButton:hover {
+    background: #295e81;
+}
+
+.myButton:active {
+    background: #144E75;
+}

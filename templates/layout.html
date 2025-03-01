@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
         <span id="logo">LegalLingo</span>
-        <input type="search" id="form-search" name="form-search" placeholder="Search"/>
+        <!-- maybe add border radius to search box, 2px?, #adadad -->
+        <input type="search" class="form-search" name="form-placebo" placeholder="Search"/>
     </nav>
+    <div id="search-overlay">
+        <form action="/search" method="post">
+            <input autocomplete="off" autofocus class="form-search" name="form-searchbox" placeholder="Search" type="text">
+        </form>
+        <div id="form-results-table"></div>
+    </div>
+    <div id="wrapper">
+        {% block main %}
+        {% endblock %}
+    </div>
+    <footer>      
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

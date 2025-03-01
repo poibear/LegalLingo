@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    LegalLingo
+{% endblock %}
+<!--HOMEPAGE, starts under div wrapper-->
+{% block main %}
+    <h2 id="banner-text">{{ catchphrase }}</h2>
+    <h4 id="banner-description">Understand your tax documents in layman terms</h4>
+    
+    <h2>Frequently Searched Forms</h2>
+     <table>
+        <tr>
+            <th><form action=".html">
+                <input type="submit" value="Go to Another Page">
+            </form>Form Name</th>
+            <th>Description</th>
+        </tr>
+        {% for name, summary in form_names.items()%}
+        <tr>
+            <td><form action=".html">
+                <input type="submit" value="Go to Another Page">
+            </form>{{ name }}</td>
+            <td>{{ summary }}</td>
+        </tr>
+        {% endfor %}
+     </table>
+
+    <h4 id="banner-text">{{ help }}</h4>
+    
+{% endblock %}
