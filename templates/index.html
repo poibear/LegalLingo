@@ -5,27 +5,42 @@
 {% endblock %}
 <!--HOMEPAGE, starts under div wrapper-->
 {% block main %}
-    <h2 id="banner-text">{{ catchphrase }}</h2>
-    <h4 id="banner-description">Understand your tax documents in layman terms</h4>
-    
-    <h2>Frequently Searched Forms</h2>
-     <table>
-        <tr>
-            <th><form action=".html">
-                <input type="submit" value="Go to Another Page">
-            </form>Form Name</th>
-            <th>Description</th>
-        </tr>
-        {% for name, summary in form_names.items()%}
-        <tr>
-            <td><form action=".html">
-                <input type="submit" value="Go to Another Page">
-            </form>{{ name }}</td>
-            <td>{{ summary }}</td>
-        </tr>
+<div id="hero-banner">
+    <div class="left">
+        <h2 id="banner-text">{{ catchphrase }}</h2>
+        <h4 id="banner-description">{{ description }}</h4>
+    </div>
+</div>
+<hr>
+<section class="faq-container">
+    <div class="faq-container">
+        <h1 id="faq-container">FAQ: </h1>
+        {% for question, answer in FAQ.items() %}
+            <button class="dropdown-btn">{{ question }}
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <h4>{{ answer }}</h4>
+            </div>
         {% endfor %}
-     </table>
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
 
-    <h4 id="banner-text">{{ help }}</h4>
+            for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+                } else {
+                dropdownContent.style.display = "block";
+                }
+            });
+            }
+        </script>
+    </div>
+</section>
     
 {% endblock %}
+

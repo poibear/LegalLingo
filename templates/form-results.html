@@ -12,12 +12,15 @@
                     <tbody class="table-group-divider">
                     <!--result is a tuple of list top3-->
                     <!--format: [(form desc, similarity rating, form title)]-->
+                    <table>
                     {% for result in top_results %}
                         <tr>
-                            <td>{{ result[2] }}</td>
+                            <td><a href="/form?name={{ result[2] }}" style="text-decoration: none;">{{ result[2] }}</a></td>
                             <td>{{ result[0] }}</td>
                         </tr>
+
                     {% endfor %}
+                    </table>
                     </tbody>
                 {% else %}
                     <tbody class="table-group-divider">

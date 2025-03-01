@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div id="search-container">
+    <div id="search-overlay">
+        <form action="/search" method="post" onsubmit="event.preventDefault();">
+            <input autocomplete="off" autofocus class="form-search" id="form-searchbox" name="form-searchbox" placeholder="Search" type="text">
+        </form>
+        <div id="form-results-table"></div>
+    </div>
+    <div id="form-list">
+        <h2 class="ns-700">Frequently Searched Forms</h2>
+        <table>
+            {% for name, summary in form_names.items() %}
+            <tr>
+                <td><button><a href="/form?name={{ name }}">{{ name }}</a></button></td>
+                <!-- <form action="/form?name={{ name }}">
+                    <input type="hidden" name="name" value="{{ name }}"/>
+                    <input type="submit" value="{{ name }}"/>
+                </form> -->
+                <td>{{ summary }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
