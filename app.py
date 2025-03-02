@@ -88,7 +88,7 @@ def form():
         
 #Starts the server, do not change!
 if __name__ == "__main__":
-    host = "127.0.0.1"
+    host = "0.0.0.0"
     port = "8080"
     app.config["TEMPLATES_AUTO_RELOAD"] = True # reload on html change
     app.secret_key = 'supa secretz'

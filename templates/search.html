@@ -14,10 +14,6 @@
             {% for name, summary in form_names.items() %}
             <tr>
                 <td><button><a href="/form?name={{ name }}">{{ name }}</a></button></td>
-                <!-- <form action="/form?name={{ name }}">
-                    <input type="hidden" name="name" value="{{ name }}"/>
-                    <input type="submit" value="{{ name }}"/>
-                </form> -->
                 <td>{{ summary }}</td>
             </tr>
             {% endfor %}

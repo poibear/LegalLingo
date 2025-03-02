@@ -10,10 +10,18 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    background: #C2DFE3;
+    background: #c6f1f8;
 }
 
 a {
+    color: royalblue;
+}
+
+b {
+    font-weight: 700;
+}
+
+/* a {
     position: relative;
     display: inline-block;
     font-size: 2em;
@@ -21,7 +29,7 @@ a {
     font-weight: 800;
     text-decoration: underline;
     overflow: hidden;
-}
+} */
 
 button {
     background-color: transparent;
@@ -46,7 +54,7 @@ nav {
 }
 
 nav a {
-    color: black;
+    color: rgba(4, 50, 85, 0.964);
     text-decoration: none;
 }
 
@@ -63,6 +71,7 @@ nav a {
 }
 
 #logo a {    
+    color: black;
     font-family: "DM Serif Text", serif;
     font-size: 1em;
 }
@@ -72,7 +81,9 @@ nav a {
 }
 
 #search a {
+    color: black;
     font-size: 1em;
+    font-weight: 700;
 }
 
 #banner-text {
@@ -107,6 +118,10 @@ nav a {
     border-radius: 20px; 
 } */
 
+.total {
+    padding: 1em
+}
+
 .form-name {
     font-size: 2em;
     font-weight: 700;
@@ -124,6 +139,7 @@ nav a {
     display: block;
     border: none;
     background: rgb(105, 115, 120);
+    background: #9eddff;
     border-radius: 15px;
     width:100%;
     text-align: left;
@@ -153,12 +169,12 @@ nav a {
 
 .dropdown-container {
     display: none;
-    background: #91cceb;
+    background: #60d8f3;
     padding-left: 16px;
     border-radius: 5px;
 }
 
-.fa-caret-down {
+.fa-sort-desc {
     float: right;
     padding-right: 8px;
 }
@@ -166,8 +182,9 @@ nav a {
 .panel {
     justify-content: center;
     background-color: #23251f;
-
-    left: 0;
+    padding-left: 20px;
+    align-self: center;
+    left: 10;
     bottom: 0;
     width: 100%;
 }
